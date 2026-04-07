@@ -1,0 +1,454 @@
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  /* background:#f4f6f8; */
+}
+
+/* MAIN DASHBOARD LAYOUT */
+
+.dashboard{
+  display:flex;
+  width:90%;
+  height:100vh;
+}
+
+/* RIGHT SIDE CONTENT */
+
+.mainContent{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding-left: 8%;
+  
+}
+
+/* PAGE CONTENT AREA */
+
+.content{
+  padding:30px;
+}
+
+/* TITLE */
+
+.title{
+  color:#8DC63F;
+  font-size:26px;
+  margin-bottom:10px;
+    font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  /* padding-left: 2%; */
+  -webkit-text-stroke: 2px #8DC63F;
+}
+
+/* SUBTITLE */
+
+.subtitle{
+  color:#666;
+  margin-bottom:30px;
+}
+
+/* CARDS */
+/* 
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h2{
+  font-size:24px;
+  margin-bottom:5px;
+}
+
+.card p{
+  color:#777;
+  font-size:14px;
+}
+
+/* CHARTS */
+
+.charts{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+
+.chartBox{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  height:300px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+} */
+
+.dashboard1 {
+    /* padding: 20px; */
+  /* background: #f4f5f7; */
+  min-height: 100vh;
+  font-family: Arial;
+  width: 100%;
+}
+
+/* Cards */
+.cards1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card1 {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.iconBox1 {
+  background: #8DC63F;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.cardContent1 h2 {
+  margin: 0;
+}
+
+.cardContent1 p {
+  margin: 5px 0 0;
+  color: gray;
+  font-size: 14px;
+}
+
+.percent1 {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #8DC63F;
+  font-weight: bold;
+}
+
+/* Charts */
+.charts1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.chartBox1 {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  
+}
+
+.fakeChart1 {
+  height: 200px;
+  background: linear-gradient(to top, #8DC63F33, transparent);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Pie Chart */
+.pieChart1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #4c7cf3 0% 48%,
+    #1abc9c 48% 78%,
+    #f39c12 78% 91%,
+    #8e44ad 91% 100%
+  );
+  margin: 20px auto;
+}
+
+.slice1 {
+  display: none;
+}
+
+.sectionContainer2 {
+  /* background: #f4f5f7; */
+  width: 100%;
+  border: 2px solid #0000001e;
+  border-radius: 20px;
+    padding: 3%;
+  margin-top: 3%;
+}
+
+/* Top Layout */
+.topSection2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Chart Card */
+.chartCard2 {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.barChart2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 220px;
+  margin-top: 20px;
+}
+
+.barItem2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18%;
+}
+
+.bar2 {
+  width: 100%;
+  background: #222;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.barItem2 span {
+  font-size: 11px;
+  margin-top: 8px;
+  text-align: center;
+  color: gray;
+}
+
+/* Feed */
+.feedCard2 {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.feedItem2 {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.feedIcon2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.blue2 {
+  background: #4c7cf3;
+}
+
+.purple2 {
+  background: #8e44ad;
+}
+
+.feedItem2 h4 {
+  margin: 0;
+}
+
+.feedItem2 p {
+  margin: 3px 0;
+  font-size: 13px;
+  color: gray;
+}
+
+.feedItem2 span {
+  font-size: 11px;
+  color: #999;
+}
+
+/* Status Section */
+.statusSection2 {
+  margin-top: 20px;
+}
+
+.statusTitle2 {
+  color: #8DC63F;
+  margin-bottom: 15px;
+}
+
+.statusCards2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.statusCard2 {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+.statusCard2 h4 {
+  margin: 0;
+  color: gray;
+}
+
+.statusCard2 h2 {
+  margin: 10px 0;
+}
+
+.statusCard2 p {
+  font-size: 13px;
+  color: gray;
+}
+
+.greenText2 {
+  color: #8DC63F;
+}
+.terms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    gap: 70%;
+    padding-top: 2%;
+}
+.conditions{
+    color: #2222225a;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 768px) {
+
+  /* Dashboard layout */
+  .dashboard {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .mainContent {
+    padding-left: 0;
+  }
+
+  /* Page content padding */
+  .content {
+    padding: 15px;
+  }
+
+  /* Title */
+  .title {
+    font-size: 20px;
+    -webkit-text-stroke: 1px #8DC63F;
+  }
+
+  /* Cards */
+  .cards1,
+  .statusCards2 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Charts */
+  .charts1,
+  .topSection2 {
+    grid-template-columns: 1fr;
+  }
+
+  .chartBox1 {
+    padding: 15px;
+  }
+
+  /* Pie Chart */
+  .pieChart1 {
+    width: 150px;
+    height: 150px;
+    margin: 15px auto;
+  }
+
+  /* Bar Chart */
+  .barChart2 {
+    height: 180px;
+  }
+
+  .barItem2 {
+    width: 22%;
+  }
+
+  /* Feed items */
+  .feedItem2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Terms */
+  .terms {
+    flex-direction: column;
+    gap: 10%;
+    padding-top: 2%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* Cards */
+  .cards1,
+  .statusCards2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Charts */
+  .charts1,
+  .topSection2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Pie Chart */
+  .pieChart1 {
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
+  }
+
+  /* Bar Chart */
+  .barChart2 {
+    height: 200px;
+  }
+
+  /* Terms */
+  .terms {
+    flex-direction: column;
+    gap: 15%;
+    padding-top: 2%;
+  }
+}

@@ -1,0 +1,56 @@
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+/* border-bottom:1px solid #ddd; */
+/* background:white; */
+width: 100%;
+margin: 0 auto;
+}
+
+/* SEARCH */
+
+.search{
+width:320px;
+padding:10px 15px;
+border-radius:8px;
+border:1px solid #ccc;
+outline:none;
+}
+
+/* RIGHT SIDE */
+
+.topRight{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+/* LANGUAGE */
+
+.language{
+display:flex;
+align-items:center;
+gap:5px;
+color:#444;
+font-size:14px;
+}
+
+.language img{
+width:18px;
+}
+
+/* ICONS */
+
+.topIcon{
+width:20px;
+cursor:pointer;
+opacity:.7;
+transition:.3s;
+}
+
+.topIcon:hover{
+opacity:1;
+transform:scale(1.1);
+}
