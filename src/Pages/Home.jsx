@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Home.css'
 import Navbar from '../Components/Nav';
 import Topbar from '../Components/Tobbar';
+import Footer from '../Components/Footer';
 
 const Home = () => {
     return ( <>
@@ -192,10 +193,7 @@ const Home = () => {
 
     </div>
     
-    <div className='terms'>
-        <p className='conditions'>WayCharge-Copyrights@2026</p>
-        <p className='conditions'>Partinia Emad</p>
-    </div>
+<Footer />
 
     </div>
 

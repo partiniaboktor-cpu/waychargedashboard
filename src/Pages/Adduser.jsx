@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import './Adduser.css'
 import Navbar from '../Components/Nav';
 import Topbar from '../Components/Tobbar';
+import { Link } from 'react-router-dom';
+import Footer from "../Components/Footer";
 
 const Adduser = () => {
 
@@ -24,105 +26,61 @@ const [lastActive4,setLastActive4] = useState("");
 
         <Topbar />
 
-       <div className="modalContainer4">
+<div className="modalOverlay4">
 
-<div className="modalBox4">
+<div className="modalContainer4">
 
+<div className="modalHeader4">
 <h2 className="title4">Add New User</h2>
-
-<div className="tabs4">
-<span className="activeTab4">English Content</span>
-<span className="tab4">المحتوى العربي</span>
-</div>
+<Link to="/Users" className="closeLink">
+  <span className="closeBtn4">×</span>
+</Link></div>
 
 
-{/* Name */}
+
+<div className="formContainer4">
+
 <label className="label4">Name</label>
-<input
-className="input4"
-value={name4}
-onChange={(e)=>setName4(e.target.value)}
-placeholder="Enter location name"
-/>
-
-<ReactQuill className="editor4"/>
+<input className="input4" placeholder="Enter location name" />
 
 
-{/* Email */}
 <label className="label4">Email*</label>
-<input
-className="input4"
-value={email4}
-onChange={(e)=>setEmail4(e.target.value)}
-placeholder="Enter location description"
-/>
-
-<ReactQuill className="editor4"/>
+<textarea className="textarea4" placeholder="Enter location description"></textarea>
 
 
-{/* Role */}
 <label className="label4">Role*</label>
-<input
-className="input4"
-value={role4}
-onChange={(e)=>setRole4(e.target.value)}
-placeholder="Enter full address"
-/>
-
-<ReactQuill className="editor4"/>
+<input className="input4" placeholder="Enter full address" />
 
 
-{/* Status */}
 <label className="label4">Status*</label>
-<input
-className="input4"
-value={status4}
-onChange={(e)=>setStatus4(e.target.value)}
-/>
-
-<ReactQuill className="editor4"/>
+<input className="input4" />
 
 
-{/* Car Type */}
 <label className="label4">Car Type</label>
-<input
-className="input4"
-value={carType4}
-onChange={(e)=>setCarType4(e.target.value)}
-placeholder="List available amenities"
-/>
-
-<ReactQuill className="editor4"/>
+<textarea className="textarea4" placeholder="List available amenities"></textarea>
 
 
-{/* Join Date */}
 <label className="label4">Join Date</label>
-<input
-className="input4"
-value={joinDate4}
-onChange={(e)=>setJoinDate4(e.target.value)}
-/>
-
-<ReactQuill className="editor4"/>
+<textarea className="textarea4" placeholder="List available amenities"></textarea>
 
 
-{/* Last Active */}
 <label className="label4">Last Active</label>
-<input
-className="input4"
-value={lastActive4}
-onChange={(e)=>setLastActive4(e.target.value)}
-/>
-
-<ReactQuill className="editor4"/>
+<textarea className="textarea4" placeholder="List available amenities"></textarea>
 
 
-<button className="submitBtn4">Add Location</button>
+<div className="buttonContainer4">
+  <Link to="/Users" className="Adduser">
+<button className="submitBtn4">Add User</button>
+</Link>
+</div>
+
+</div>
 
 </div>
 
 </div>
 
+<Footer />
 
       </div>
     </div>

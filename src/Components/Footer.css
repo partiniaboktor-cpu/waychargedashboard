@@ -1,0 +1,14 @@
+.terms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    gap: 70%;
+    padding-top: 2%;
+}
+.conditions{
+    color: #2222225a;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
