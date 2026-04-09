@@ -25,10 +25,12 @@
 }
 
 .addLocationClose {
-  text-decoration: none;
+  background: transparent;
+  border: none;
   font-size: 30px;
   color: #8d95a4;
   line-height: 1;
+  cursor: pointer;
 }
 
 .addLocationTabs {

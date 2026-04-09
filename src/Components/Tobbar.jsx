@@ -3,13 +3,16 @@ import './Topbar.css'
 import settings from "../Assets/icons/settings.svg";
 import globe from "../Assets/icons/globe.svg";
 import notifications from '../Assets/icons/notifications.svg'
+import RichTextField from "./RichTextField";
 
 const Topbar = () => {
     return ( <>
     
 <div className="topbar">
 
-      <input className="search" placeholder="Search..." />
+      <div className="searchRte">
+        <RichTextField placeholder="Search..." minHeight={40} showToolbar={false} />
+      </div>
 
       <div className="topRight">
 

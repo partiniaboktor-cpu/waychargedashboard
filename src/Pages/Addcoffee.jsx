@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Addcoffee.css";
 import Navbar from '../Components/Nav';
 import Topbar from '../Components/Tobbar';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Footer from "../Components/Footer";
 import RichTextField from "../Components/RichTextField";
+import { ConfirmDialog, InlineMessage } from "../Components/UIStates";
 
 const Addcofffee = () => {
+const navigate = useNavigate();
+const [coffeeName, setCoffeeName] = useState("");
+const [message, setMessage] = useState({ type: "", text: "" });
+const [confirmClose, setConfirmClose] = useState(false);
+
+const handleAdd = () => {
+  if (!coffeeName.trim()) {
+    setMessage({ type: "error", text: "Image/coffee field is required before adding." });
+    return;
+  }
+  setMessage({ type: "success", text: "Coffee item added successfully." });
+  setTimeout(() => navigate("/Coffee"), 500);
+};
 
     return ( <>
     
@@ -24,16 +38,21 @@ const Addcofffee = () => {
 
 <div className="modalHeader4">
 <h2 className="title4">Add New Coffee Type</h2>
-<Link to="/Coffee" className="closeLink">
+<button type="button" className="closeLink closeBtn4Button" onClick={() => setConfirmClose(true)}>
   <span className="closeBtn4">×</span>
-</Link></div>
+</button></div>
+<InlineMessage type={message.type} message={message.text} />
 
 
 
 <div className="formContainer4">
 
 <label className="label4">Image</label>
-<RichTextField placeholder="Enter image URL or image details" minHeight={56} />
+<RichTextField
+  placeholder="Enter image URL or image details"
+  minHeight={56}
+  onChangeText={setCoffeeName}
+/>
 
 
 <label className="label4">Descrption</label>
@@ -59,9 +78,7 @@ const Addcofffee = () => {
 
 
 <div className="buttonContainer4">
-  <Link to="/Coffee" className="Adduser">
-<button className="submitBtn4">Add Coffee</button>
-</Link>
+<button className="submitBtn4" type="button" onClick={handleAdd}>Add Coffee</button>
 </div>
 
 </div>
@@ -69,6 +86,16 @@ const Addcofffee = () => {
 </div>
 
 </div>
+
+<ConfirmDialog
+  open={confirmClose}
+  title="Discard coffee form?"
+  description="If you close now, unsaved data will be lost."
+  confirmText="Discard"
+  confirmVariant="danger"
+  onCancel={() => setConfirmClose(false)}
+  onConfirm={() => navigate("/Coffee")}
+/>
 
 <Footer />
 

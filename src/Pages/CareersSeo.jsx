@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./CareersSeo.css";
 import Navbar from "../Components/Nav";
 import Topbar from "../Components/Tobbar";
 import Footer from "../Components/Footer";
+import RichTextField from "../Components/RichTextField";
+import { InlineMessage } from "../Components/UIStates";
 
 const CareersSeo = () => {
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
   return (
     <div className="dashboard">
       <Navbar />
@@ -15,6 +18,7 @@ const CareersSeo = () => {
         <div className="careersSeoPage">
           <h1 className="careersSeoTitle">CAREERS SEO SETTINGS</h1>
           <p className="careersSeoSubtitle">Optimize careers page visibility for search engines</p>
+          <InlineMessage type={feedback.type} message={feedback.message} />
 
           <div className="careersSeoTabs">
             <Link to="/Careers" className="tabLink">Page Content</Link>
@@ -26,27 +30,27 @@ const CareersSeo = () => {
             <div className="seoFormGrid">
               <div>
                 <label>SEO Title (EN)</label>
-                <input placeholder="Careers at WayCharge | EV Future Jobs" />
+                <RichTextField placeholder="Careers at WayCharge | EV Future Jobs" minHeight={52} />
               </div>
               <div>
                 <label>SEO Title (AR)</label>
-                <input placeholder="وظائف واي تشارج | مستقبل التنقل الكهربائي" />
+                <RichTextField placeholder="وظائف واي تشارج | مستقبل التنقل الكهربائي" minHeight={52} />
               </div>
               <div>
                 <label>Meta Description (EN)</label>
-                <textarea placeholder="Join WayCharge and build the future of electric mobility." />
+                <RichTextField placeholder="Join WayCharge and build the future of electric mobility." minHeight={90} />
               </div>
               <div>
                 <label>Meta Description (AR)</label>
-                <textarea placeholder="انضم إلى واي تشارج وشارك في بناء مستقبل التنقل الكهربائي." />
+                <RichTextField placeholder="انضم إلى واي تشارج وشارك في بناء مستقبل التنقل الكهربائي." minHeight={90} />
               </div>
               <div>
                 <label>Focus Keywords</label>
-                <input placeholder="ev jobs, battery engineer, charging station careers" />
+                <RichTextField placeholder="ev jobs, battery engineer, charging station careers" minHeight={52} />
               </div>
               <div>
                 <label>Canonical URL</label>
-                <input placeholder="https://waycharge.com/careers" />
+                <RichTextField placeholder="https://waycharge.com/careers" minHeight={52} />
               </div>
             </div>
           </section>
@@ -73,7 +77,7 @@ const CareersSeo = () => {
           </section>
 
           <div className="seoSaveWrap">
-            <button type="button">Save SEO Settings</button>
+            <button type="button" onClick={() => setFeedback({ type: "success", message: "SEO settings saved successfully." })}>Save SEO Settings</button>
           </div>
         </div>
 

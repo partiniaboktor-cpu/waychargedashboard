@@ -5,12 +5,16 @@ import logo from '../Assets/icons/logo.svg';
 import dashboard from '../Assets/icons/dashboard.svg';
 import users from '../Assets/icons/users.svg';
 import coffee from '../Assets/icons/coffee.svg';
-import locations from '../Assets/icons/locations.svg';
 import analatyics from '../Assets/icons/analatyics.svg';
-import system from '../Assets/icons/system.svg';
 import globe from '../Assets/icons/globe.svg';
 import { Link, useLocation } from 'react-router-dom';
-import { FaCartShopping, FaMoneyBillWave } from 'react-icons/fa6';
+import {
+  FaCartShopping,
+  FaMoneyBillWave,
+  FaLocationDot,
+  FaGear,
+  FaBriefcase
+} from 'react-icons/fa6';
 
 const Navbar = () => {
 
@@ -37,9 +41,9 @@ const Navbar = () => {
           </div>
 
           <div className="navItems">
-<Link to="/" className="navLink">
+<Link to="/dashboard" className="navLink">
   <div className="navItem">
-    <img src={dashboard} className={`navIcon ${isActive("/") ? "active" : ""}`} alt="dashboard"/>
+    <img src={dashboard} className={`navIcon ${isActive("/dashboard") ? "active" : ""}`} alt="dashboard"/>
     <span className="navText">Dashboard</span>
   </div>
 </Link>
@@ -58,7 +62,7 @@ const Navbar = () => {
 </Link>
 <Link to="/Location" className="navLink">
   <div className="navItem">
-    <img src={locations} className={`navIcon ${isActive("/Location") || isActive("/Addlocation") ? "active" : ""}`} alt="location"/>
+    <FaLocationDot className={`navIconGlyph ${isActive("/Location") || isActive("/Addlocation") ? "active" : ""}`} />
     <span className="navText">Locations</span>
   </div>
 </Link>
@@ -74,6 +78,13 @@ const Navbar = () => {
   <div className="navItem">
     <FaMoneyBillWave className={`navIconGlyph ${isActive("/Payments") ? "active" : ""}`} />
     <span className="navText">Payments</span>
+  </div>
+</Link>
+
+<Link to="/Careers" className="navLink">
+  <div className="navItem">
+    <FaBriefcase className={`navIconGlyph ${isActive("/Careers") || isActive("/CareersSeo") ? "active" : ""}`} />
+    <span className="navText">Careers</span>
   </div>
 </Link>
 
@@ -93,7 +104,7 @@ const Navbar = () => {
 
 <Link to="/Settings" className="navLink">
   <div className="navItem">
-    <img src={system} className={`navIcon ${isActive("/Settings") || isActive("/System") ? "active" : ""}`} alt="settings"/>
+    <FaGear className={`navIconGlyph ${isActive("/Settings") || isActive("/System") ? "active" : ""}`} />
     <span className="navText">Settings</span>
   </div>
 </Link>

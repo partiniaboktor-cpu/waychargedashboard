@@ -1,0 +1,47 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(180deg, #f8fbf1, #ffffff);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.loginCard {
+  width: min(460px, 100%);
+  background: #fff;
+  border: 1px solid #d8dee7;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.loginCard h1 {
+  margin: 0;
+  color: #8dc63f;
+}
+
+.loginCard p {
+  margin: 6px 0 12px;
+  color: #6b7485;
+}
+
+.loginCard label {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.loginCard button {
+  margin-top: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 12px;
+  color: #fff;
+  background: #8dc63f;
+  font-weight: 700;
+  cursor: pointer;
+}

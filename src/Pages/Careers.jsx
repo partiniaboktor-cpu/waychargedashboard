@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Careers.css";
 import Navbar from "../Components/Nav";
 import Topbar from "../Components/Tobbar";
 import Footer from "../Components/Footer";
+import RichTextField from "../Components/RichTextField";
+import { InlineMessage } from "../Components/UIStates";
 
 const Careers = () => {
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
   return (
     <div className="dashboard">
       <Navbar />
@@ -15,6 +18,7 @@ const Careers = () => {
         <div className="careersPage">
           <h1 className="careersTitle">CAREERS MANAGEMENT</h1>
           <p className="careersSubtitle">Manage job openings and career opportunities</p>
+          <InlineMessage type={feedback.type} message={feedback.message} />
 
           <div className="careersTabs">
             <button type="button" className="tabActive">Page Content</button>
@@ -26,19 +30,19 @@ const Careers = () => {
             <div className="careerGrid">
               <div>
                 <label>Page Title (EN)</label>
-                <input placeholder="Find Jobs in WayCharge" />
+                <RichTextField placeholder="Find Jobs in WayCharge" minHeight={52} />
               </div>
               <div>
                 <label>العربية (AR)</label>
-                <input placeholder="ابحث عن وظيفة في واي تشارج" />
+                <RichTextField placeholder="ابحث عن وظيفة في واي تشارج" minHeight={52} />
               </div>
               <div>
                 <label>Page Description (EN)</label>
-                <textarea placeholder="Explore new career opportunities with us..." />
+                <RichTextField placeholder="Explore new career opportunities with us..." minHeight={90} />
               </div>
               <div>
                 <label>العربية (AR)</label>
-                <textarea placeholder="اكتشف وظائف جديدة معنا في مجال التنقل المستدام..." />
+                <RichTextField placeholder="اكتشف وظائف جديدة معنا في مجال التنقل المستدام..." minHeight={90} />
               </div>
             </div>
           </section>
@@ -46,7 +50,7 @@ const Careers = () => {
           <section className="careersPanel">
             <div className="panelTop">
               <h3>Job Openings</h3>
-              <button type="button">+ Add Job</button>
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "New job block added." })}>+ Add Job</button>
             </div>
 
             <div className="jobCard">
@@ -54,47 +58,47 @@ const Careers = () => {
               <div className="careerGrid">
                 <div>
                   <label>Job Title (EN)</label>
-                  <input placeholder="Senior Battery Engineer" />
+                  <RichTextField placeholder="Senior Battery Engineer" minHeight={52} />
                 </div>
                 <div>
                   <label>العربية (AR)</label>
-                  <input placeholder="مهندس بطاريات أول" />
+                  <RichTextField placeholder="مهندس بطاريات أول" minHeight={52} />
                 </div>
                 <div>
                   <label>Department (EN)</label>
-                  <input placeholder="Engineering" />
+                  <RichTextField placeholder="Engineering" minHeight={52} />
                 </div>
                 <div>
                   <label>العربية (AR)</label>
-                  <input placeholder="الهندسة" />
+                  <RichTextField placeholder="الهندسة" minHeight={52} />
                 </div>
                 <div>
                   <label>Location (EN)</label>
-                  <input placeholder="San Francisco, CA" />
+                  <RichTextField placeholder="San Francisco, CA" minHeight={52} />
                 </div>
                 <div>
                   <label>العربية (AR)</label>
-                  <input placeholder="سان فرانسيسكو، كاليفورنيا" />
+                  <RichTextField placeholder="سان فرانسيسكو، كاليفورنيا" minHeight={52} />
                 </div>
                 <div className="full">
                   <label>Job Type</label>
-                  <input placeholder="Full-time" />
+                  <RichTextField placeholder="Full-time" minHeight={52} />
                 </div>
                 <div>
                   <label>Job Description (EN)</label>
-                  <textarea placeholder="Lead the development of next-generation batteries..." />
+                  <RichTextField placeholder="Lead the development of next-generation batteries..." minHeight={90} />
                 </div>
                 <div>
                   <label>العربية (AR)</label>
-                  <textarea placeholder="قيادة تطوير البطاريات من الجيل التالي..." />
+                  <RichTextField placeholder="قيادة تطوير البطاريات من الجيل التالي..." minHeight={90} />
                 </div>
                 <div>
                   <label>Requirements (EN)</label>
-                  <textarea placeholder="- 5+ years experience&#10;- Bachelor's degree&#10;- CAD proficiency" />
+                  <RichTextField placeholder="- 5+ years experience - Bachelor's degree - CAD proficiency" minHeight={90} />
                 </div>
                 <div>
                   <label>العربية (AR)</label>
-                  <textarea placeholder="- خبرة 5 سنوات&#10;- درجة بكالوريوس&#10;- إجادة CAD" />
+                  <RichTextField placeholder="- خبرة 5 سنوات - درجة بكالوريوس - إجادة CAD" minHeight={90} />
                 </div>
               </div>
             </div>
@@ -110,7 +114,7 @@ const Careers = () => {
           </section>
 
           <div className="saveWrap">
-            <button type="button">Save Changes</button>
+            <button type="button" onClick={() => setFeedback({ type: "success", message: "Career content saved successfully." })}>Save Changes</button>
           </div>
         </div>
 

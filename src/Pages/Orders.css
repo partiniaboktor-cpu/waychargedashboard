@@ -48,14 +48,14 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
 }
 
-.metricTopLine {
+.ordersPage .metricTopLine {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
 }
 
-.metricIcon {
+.ordersPage .metricIcon {
   width: 34px;
   height: 34px;
   display: inline-flex;
@@ -65,7 +65,7 @@
   background: #f2f5fb;
 }
 
-.metricTrend {
+.ordersPage .metricTrend {
   color: #15a05d;
   background: #eaf7ef;
   padding: 4px 8px;
@@ -74,12 +74,12 @@
   font-weight: 700;
 }
 
-.metricLabel {
+.ordersPage .metricLabel {
   color: #697486;
   font-size: 13px;
 }
 
-.metricValue {
+.ordersPage .metricValue {
   margin-top: 6px;
   font-size: 36px;
   font-weight: 700;
@@ -116,24 +116,24 @@
   padding: 16px;
 }
 
-.sectionHead h3 {
+.ordersPage .sectionHead h3 {
   margin: 0;
   font-size: 18px;
 }
 
-.sectionHead p {
+.ordersPage .sectionHead p {
   margin: 4px 0 14px;
   color: #7a8495;
   font-size: 13px;
 }
 
-.ordersList {
+.ordersPage .ordersList {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.orderRow {
+.ordersPage .orderRow {
   border: 1px solid #d8dee7;
   border-radius: 12px;
   padding: 12px;
@@ -143,7 +143,7 @@
   gap: 10px;
 }
 
-.rowType {
+.ordersPage .rowType {
   width: 38px;
   height: 38px;
   border-radius: 10px;
@@ -153,42 +153,42 @@
   font-size: 18px;
 }
 
-.type-charging {
+.ordersPage .type-charging {
   background: #eaf8ee;
 }
 
-.type-coffee {
+.ordersPage .type-coffee {
   background: #fff6e5;
 }
 
-.type-mobile {
+.ordersPage .type-mobile {
   background: #f3ecff;
 }
 
-.rowOrderId,
-.rowCustomer {
+.ordersPage .rowOrderId,
+.ordersPage .rowCustomer {
   font-weight: 700;
   color: #1f2735;
 }
 
-.rowTime {
+.ordersPage .rowTime {
   color: #7d8798;
   font-size: 12px;
   margin-top: 4px;
 }
 
-.rowMeta span {
+.ordersPage .rowMeta span {
   color: #7d8798;
   font-size: 11px;
 }
 
-.rowMeta strong {
+.ordersPage .rowMeta strong {
   display: block;
   margin-top: 2px;
   font-size: 14px;
 }
 
-.orderStatus {
+.ordersPage .orderStatus {
   justify-self: end;
   padding: 6px 10px;
   border-radius: 999px;
@@ -196,27 +196,38 @@
   font-weight: 700;
 }
 
-.status-completed {
+.ordersPage .status-completed {
   color: #13854d;
   background: #e5f7ec;
 }
 
-.status-preparing {
+.ordersPage .status-preparing {
   color: #9a6e00;
   background: #fff2cf;
 }
 
-.status-in-progress {
+.ordersPage .status-in-progress {
   color: #376ac5;
   background: #e9f1ff;
 }
 
-.status-cancelled {
+.ordersPage .status-cancelled {
   color: #b23b48;
   background: #fdecef;
 }
 
-.ordersFooter {
+.ordersPage .deleteOrderBtn {
+  border: 1px solid #e7b7be;
+  background: #fff;
+  color: #b03f4d;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  justify-self: end;
+  cursor: pointer;
+}
+
+.ordersPage .ordersFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -225,7 +236,7 @@
   font-size: 13px;
 }
 
-.pagerBtns button {
+.ordersPage .pagerBtns button {
   border: 1px solid #cad1db;
   background: #fff;
   border-radius: 8px;
@@ -242,37 +253,37 @@
   margin: 0 0 10px;
 }
 
-.relatedCards {
+.ordersPage .relatedCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 
-.relatedCard {
+.ordersPage .relatedCard {
   border-radius: 14px;
   padding: 14px;
 }
 
-.relatedCard strong {
+.ordersPage .relatedCard strong {
   display: block;
   font-size: 28px;
   margin: 6px 0;
 }
 
-.relatedCard span {
+.ordersPage .relatedCard span {
   color: #6c7688;
   font-size: 12px;
 }
 
-.relatedCard.green {
+.ordersPage .relatedCard.green {
   background: #eaf8ee;
 }
 
-.relatedCard.orange {
+.ordersPage .relatedCard.orange {
   background: #fff5e3;
 }
 
-.relatedCard.purple {
+.ordersPage .relatedCard.purple {
   background: #f3ecff;
 }
 
@@ -281,12 +292,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .orderRow {
+  .ordersPage .orderRow {
     grid-template-columns: 50px 1fr 1fr;
   }
 
-  .rowMeta,
-  .orderStatus {
+  .ordersPage .rowMeta,
+  .ordersPage .orderStatus {
     justify-self: start;
   }
 }
@@ -306,7 +317,7 @@
   }
 
   .ordersMetrics,
-  .relatedCards {
+  .ordersPage .relatedCards {
     grid-template-columns: 1fr;
   }
 

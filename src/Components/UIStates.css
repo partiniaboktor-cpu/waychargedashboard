@@ -1,0 +1,121 @@
+.uiLoadingWrap {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #526077;
+}
+
+.uiSpinner {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 4px solid #dce5cf;
+  border-top-color: #8dc63f;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.uiMessage {
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.uiMessage.success {
+  background: #e7f8ed;
+  color: #167e4a;
+  border: 1px solid #b8e7ca;
+}
+
+.uiMessage.error {
+  background: #fdecef;
+  color: #b03f4d;
+  border: 1px solid #f4c3ca;
+}
+
+.uiEmpty {
+  border: 1px dashed #cdd5e0;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  color: #6d7789;
+}
+
+.uiEmpty h4 {
+  margin: 0;
+}
+
+.uiEmpty p {
+  margin: 6px 0 0;
+}
+
+.uiDialogBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+  padding: 20px;
+}
+
+.uiDialog {
+  width: min(420px, 100%);
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #d9e0ea;
+  padding: 16px;
+}
+
+.uiDialog h4 {
+  margin: 0 0 4px;
+}
+
+.uiDialog p {
+  margin: 0;
+  color: #6d7789;
+}
+
+.uiDialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.ghostBtn {
+  border: 1px solid #ccd3de;
+  background: #fff;
+  padding: 9px 12px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.dangerBtn {
+  border: none;
+  background: #df5a66;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.successBtn {
+  border: none;
+  background: #8dc63f;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 9px;
+  cursor: pointer;
+}

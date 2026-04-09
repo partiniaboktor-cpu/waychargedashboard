@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Orders.css";
 import Navbar from "../Components/Nav";
 import Topbar from "../Components/Tobbar";
 import Footer from "../Components/Footer";
+import RichTextField from "../Components/RichTextField";
+import { ConfirmDialog, EmptyState, InlineMessage } from "../Components/UIStates";
 
 const Orders = () => {
   const metrics = [
@@ -12,7 +14,7 @@ const Orders = () => {
     { icon: "📍", label: "Mobile Requests", value: "179", trend: "+15.2%" },
   ];
 
-  const orders = [
+  const initialOrders = [
     {
       id: "ORD-2341",
       type: "charging",
@@ -75,6 +77,16 @@ const Orders = () => {
     },
   ];
 
+  const [orders, setOrders] = useState(initialOrders);
+  const [pendingDelete, setPendingDelete] = useState(null);
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
+
+  const confirmDelete = () => {
+    setOrders((prev) => prev.filter((o) => o.id !== pendingDelete?.id));
+    setFeedback({ type: "success", message: `Order ${pendingDelete?.id} deleted successfully.` });
+    setPendingDelete(null);
+  };
+
   return (
     <div className="dashboard">
       <Navbar />
@@ -89,10 +101,15 @@ const Orders = () => {
                 Manage charging sessions, coffee orders, and mobile requests
               </p>
             </div>
-            <button className="exportBtn" type="button">
+            <button
+              className="exportBtn"
+              type="button"
+              onClick={() => setFeedback({ type: "error", message: "Export service is not connected yet." })}
+            >
               Export Report
             </button>
           </div>
+          <InlineMessage type={feedback.type} message={feedback.message} />
 
           <div className="ordersMetrics">
             {metrics.map((item) => (
@@ -108,9 +125,10 @@ const Orders = () => {
           </div>
 
           <div className="ordersToolbar">
-            <input
-              className="ordersSearch"
+            <RichTextField
               placeholder="Search orders by ID, customer, or station..."
+              minHeight={46}
+              showToolbar={false}
             />
             <button className="filterBtn" type="button">
               Filters
@@ -123,8 +141,14 @@ const Orders = () => {
               <p>Latest transactions and bookings</p>
             </div>
 
-            <div className="ordersList">
-              {orders.map((order) => (
+            {orders.length === 0 ? (
+              <EmptyState
+                title="No orders available"
+                subtitle="There are currently no orders to display."
+              />
+            ) : (
+              <div className="ordersList">
+                {orders.map((order) => (
                 <article className="orderRow" key={order.id}>
                   <div className={`rowType type-${order.type}`}>
                     {order.type === "charging"
@@ -171,9 +195,17 @@ const Orders = () => {
                   >
                     {order.status}
                   </span>
+                  <button
+                    type="button"
+                    className="deleteOrderBtn"
+                    onClick={() => setPendingDelete(order)}
+                  >
+                    Delete
+                  </button>
                 </article>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             <div className="ordersFooter">
               <span>Showing 1-5 of 1,847 orders</span>
@@ -205,6 +237,13 @@ const Orders = () => {
             </div>
           </section>
         </div>
+        <ConfirmDialog
+          open={Boolean(pendingDelete)}
+          title="Delete order?"
+          description={`This will remove ${pendingDelete?.id || "this order"} from the list.`}
+          onCancel={() => setPendingDelete(null)}
+          onConfirm={confirmDelete}
+        />
 
         <Footer />
       </div>

@@ -64,3 +64,92 @@ img {
   border-radius: 14px;
   padding: 16px;
 } */
+
+button,
+.navItem,
+.navIcon,
+.navIconGlyph,
+a {
+  transition: all 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Global dashboard layout baseline */
+.dashboard {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+.mainContent {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+  min-height: 100vh;
+  padding: 0 14px 14px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.mainContent > * {
+  max-width: 100%;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.rteEditor:focus-visible {
+  outline: 2px solid #8dc63f;
+  outline-offset: 2px;
+}
+
+.navItem:hover .navIcon,
+.navItem:hover .navIconGlyph {
+  opacity: 0.9;
+}
+
+[class*="Card"]:hover,
+.ordersMetricCard:hover,
+.paymentsStatCard:hover,
+.settingsCard:hover,
+.websitePanel:hover,
+.careersPanel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 58px;
+  }
+}

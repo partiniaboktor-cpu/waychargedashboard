@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Website.css";
 import Navbar from "../Components/Nav";
 import Topbar from "../Components/Tobbar";
 import Footer from "../Components/Footer";
+import RichTextField from "../Components/RichTextField";
+import { EmptyState, InlineMessage } from "../Components/UIStates";
 
 const Website = () => {
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
   const pages = [
     { title: "About WayCharge", slug: "/en/about", views: "15,843", status: "Published" },
     { title: "How It Works", slug: "/en/how-it-works", views: "9,021", status: "Published" },
@@ -27,6 +30,7 @@ const Website = () => {
         <div className="websitePage">
           <h1 className="websiteTitle">WEBSITE MANAGEMENT</h1>
           <p className="websiteSub">Manage SEO content, pages, and blog posts with bilingual support</p>
+          <InlineMessage type={feedback.type} message={feedback.message} />
 
           <div className="websiteStats">
             <article><span>Total Pages</span><strong>24</strong></article>
@@ -38,33 +42,33 @@ const Website = () => {
           <section className="websitePanel">
             <div className="panelHead">
               <h3>SEO Content Editor</h3>
-              <button type="button">Save Changes</button>
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "SEO content saved." })}>Save Changes</button>
             </div>
 
             <div className="seoGrid">
               <div>
                 <label>Page Title (EN)</label>
-                <input placeholder="Enter page title in English" />
+                <RichTextField placeholder="Enter page title in English" minHeight={52} />
               </div>
               <div>
                 <label>عنوان الصفحة (AR)</label>
-                <input placeholder="ادخل عنوان الصفحة بالعربي" />
+                <RichTextField placeholder="ادخل عنوان الصفحة بالعربي" minHeight={52} />
               </div>
               <div>
                 <label>URL Slug (EN)</label>
-                <input placeholder="e.g. payment-ev-flag" />
+                <RichTextField placeholder="e.g. payment-ev-flag" minHeight={52} />
               </div>
               <div>
                 <label>رابط الصفحة (AR)</label>
-                <input placeholder="اكتب رابط الصفحة" />
+                <RichTextField placeholder="اكتب رابط الصفحة" minHeight={52} />
               </div>
               <div>
                 <label>Meta Description (EN)</label>
-                <textarea placeholder="SEO meta description for search engine..." />
+                <RichTextField placeholder="SEO meta description for search engine..." minHeight={90} />
               </div>
               <div>
                 <label>وصف ميتا (AR)</label>
-                <textarea placeholder="اكتب وصف ميتا باللغة العربية" />
+                <RichTextField placeholder="اكتب وصف ميتا باللغة العربية" minHeight={90} />
               </div>
             </div>
           </section>
@@ -72,10 +76,13 @@ const Website = () => {
           <section className="websitePanel">
             <div className="panelHead">
               <h3>Website Pages</h3>
-              <button type="button">+ New Page</button>
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "New page draft created." })}>+ New Page</button>
             </div>
-            <div className="rowsList">
-              {pages.map((p) => (
+            {pages.length === 0 ? (
+              <EmptyState title="No website pages" subtitle="Create your first page." />
+            ) : (
+              <div className="rowsList">
+                {pages.map((p) => (
                 <article className="pageRow" key={p.title}>
                   <div>
                     <strong>{p.title}</strong>
@@ -84,17 +91,21 @@ const Website = () => {
                   <div><small>Views</small><strong>{p.views}</strong></div>
                   <span className={`status ${p.status.toLowerCase()}`}>{p.status}</span>
                 </article>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </section>
 
           <section className="websitePanel">
             <div className="panelHead">
               <h3>Blog Posts</h3>
-              <button type="button">+ New Post</button>
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "New post draft created." })}>+ New Post</button>
             </div>
-            <div className="rowsList">
-              {posts.map((p) => (
+            {posts.length === 0 ? (
+              <EmptyState title="No blog posts" subtitle="Create your first blog post." />
+            ) : (
+              <div className="rowsList">
+                {posts.map((p) => (
                 <article className="pageRow" key={p.title}>
                   <div>
                     <strong>{p.title}</strong>
@@ -103,8 +114,9 @@ const Website = () => {
                   <div><small>Views</small><strong>{p.views}</strong></div>
                   <span className={`status ${p.status.toLowerCase()}`}>{p.status}</span>
                 </article>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </section>
 
           <section className="websiteRelated">

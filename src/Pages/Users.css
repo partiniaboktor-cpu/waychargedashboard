@@ -420,11 +420,13 @@
   }
 
   .table-wrapper3 {
-    overflow-x: auto;
+    overflow-x: hidden;
   }
 
   .users-table3 {
-    min-width: 600px; /* keeps table scrollable horizontally */
+    min-width: 100%;
+    table-layout: fixed;
+    word-break: break-word;
   }
 
   .table-th3, .table-th-actions3, .table-td3, .table-td-actions3 {

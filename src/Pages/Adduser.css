@@ -37,6 +37,10 @@ text-decoration: none;
     text-decoration: none;
 
 }
+.closeBtn4Button{
+background: transparent;
+border: none;
+}
 
 .tabsContainer4{
 display:flex;

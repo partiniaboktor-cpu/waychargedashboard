@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Payments.css";
 import Navbar from "../Components/Nav";
 import Topbar from "../Components/Tobbar";
 import Footer from "../Components/Footer";
+import RichTextField from "../Components/RichTextField";
+import { EmptyState, InlineMessage } from "../Components/UIStates";
 
 const Payments = () => {
   const metrics = [
@@ -19,13 +21,16 @@ const Payments = () => {
     { name: "Points", amount: "$8,054", sub: "218 transactions", share: "16.7%" },
   ];
 
-  const rows = [
+  const initialRows = [
     ["TXN-9821", "Ahmed Mohamed", "$25.50", "Apple Pay", "2026-03-19 14:30", "Completed"],
     ["TXN-9820", "Sara Ali", "$12.00", "Credit Card", "2026-03-19 14:15", "Completed"],
     ["TXN-9819", "Mohamed Hassan", "$35.75", "Instapay", "2026-03-19 13:45", "Pending"],
     ["TXN-9818", "Layla Ahmed", "$28.90", "Points + Card", "2026-03-19 12:20", "Completed"],
     ["TXN-9817", "Omar Ibrahim", "$8.50", "Credit Card", "2026-03-19 11:30", "Failed"],
   ];
+
+  const [rows] = useState(initialRows);
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
 
   return (
     <div className="dashboard">
@@ -41,8 +46,15 @@ const Payments = () => {
                 Monitor revenue, transactions, and payment methods
               </p>
             </div>
-            <button type="button" className="paymentsExportBtn">Export Report</button>
+            <button
+              type="button"
+              className="paymentsExportBtn"
+              onClick={() => setFeedback({ type: "error", message: "Export service is not connected yet." })}
+            >
+              Export Report
+            </button>
           </div>
+          <InlineMessage type={feedback.type} message={feedback.message} />
 
           <div className="paymentsStats">
             {metrics.map((m) => (
@@ -115,7 +127,11 @@ const Payments = () => {
           </div>
 
           <div className="paymentsToolbar">
-            <input placeholder="Search by transaction ID, customer, or amount..." />
+            <RichTextField
+              placeholder="Search by transaction ID, customer, or amount..."
+              minHeight={46}
+              showToolbar={false}
+            />
             <button type="button">Filters</button>
           </div>
 
@@ -123,8 +139,11 @@ const Payments = () => {
             <h3>Recent Transactions</h3>
             <p>Latest payment transactions</p>
 
-            <div className="txnList">
-              {rows.map((r) => (
+            {rows.length === 0 ? (
+              <EmptyState title="No transactions yet" subtitle="Transactions will appear here once available." />
+            ) : (
+              <div className="txnList">
+                {rows.map((r) => (
                 <article className="txnRow" key={r[0]}>
                   <div className="txnId">
                     <strong>{r[0]}</strong>
@@ -135,8 +154,9 @@ const Payments = () => {
                   <div><small>Date &amp; Time</small><strong>{r[4]}</strong></div>
                   <span className={`txnStatus ${r[5].toLowerCase()}`}>{r[5]}</span>
                 </article>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             <div className="txnFooter">
               <span>Showing 1-5 of 2,847 transactions</span>

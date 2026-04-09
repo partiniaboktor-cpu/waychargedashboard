@@ -2,13 +2,13 @@
 .careersTitle { margin: 0; color: #8dc63f; font-size: 32px; font-family: "Aboreto", system-ui; font-weight: 400; -webkit-text-stroke: 2px #8dc63f; }
 .careersSubtitle { margin: 6px 0 14px; color: #6b7485; }
 .careersTabs { display: inline-flex; background: #f0f3f8; border-radius: 999px; padding: 4px; gap: 6px; margin-bottom: 14px; }
-.tabActive, .tabLink { border: none; border-radius: 999px; padding: 8px 14px; font-size: 13px; text-decoration: none; }
-.tabActive { background: #8dc63f; color: #fff; }
-.tabLink { background: transparent; color: #5f6a7d; }
+.careersPage .tabActive, .careersPage .tabLink { border: none; border-radius: 999px; padding: 8px 14px; font-size: 13px; text-decoration: none; }
+.careersPage .tabActive { background: #8dc63f; color: #fff; }
+.careersPage .tabLink { background: transparent; color: #5f6a7d; }
 .careersPanel { background: #fff; border: 1px solid #d8dee7; border-radius: 14px; padding: 14px; margin-bottom: 14px; }
 .careersPanel h3 { margin: 0 0 10px; }
-.panelTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.panelTop button, .saveWrap button { border: none; background: #8dc63f; color: #fff; border-radius: 10px; padding: 10px 14px; cursor: pointer; }
+.careersPage .panelTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.careersPage .panelTop button, .careersPage .saveWrap button { border: none; background: #8dc63f; color: #fff; border-radius: 10px; padding: 10px 14px; cursor: pointer; }
 .careerGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .careerGrid .full { grid-column: 1 / -1; }
 .careerGrid label { display: block; font-size: 12px; color: #6c7688; margin-bottom: 5px; }
@@ -17,9 +17,9 @@
 .jobCard { border: 1px solid #d8dee7; border-radius: 12px; padding: 12px; }
 .jobCard h4 { margin: 0 0 8px; }
 .careersRelated h3 { margin: 2px 0 10px; }
-.relatedGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.relatedGrid article { background: #fff; border: 1px solid #d8dee7; border-radius: 12px; padding: 12px; }
-.relatedGrid span { display: block; margin-top: 5px; font-weight: 700; color: #1f2735; }
-.relatedGrid small { color: #788293; }
-.saveWrap { display: flex; justify-content: flex-end; margin-top: 8px; }
-@media (max-width: 992px) { .careerGrid, .relatedGrid { grid-template-columns: 1fr; } }
+.careersPage .relatedGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.careersPage .relatedGrid article { background: #fff; border: 1px solid #d8dee7; border-radius: 12px; padding: 12px; }
+.careersPage .relatedGrid span { display: block; margin-top: 5px; font-weight: 700; color: #1f2735; }
+.careersPage .relatedGrid small { color: #788293; }
+.careersPage .saveWrap { display: flex; justify-content: flex-end; margin-top: 8px; }
+@media (max-width: 992px) { .careersPage .careerGrid, .careersPage .relatedGrid { grid-template-columns: 1fr; } }

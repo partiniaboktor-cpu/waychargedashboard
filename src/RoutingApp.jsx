@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Users from './Pages/Users';
@@ -13,25 +13,44 @@ import Orders from './Pages/Orders';
 import Payments from './Pages/Payments';
 import Website from './Pages/Website';
 import Settings from './Pages/Settings';
+import Careers from './Pages/Careers';
+import CareersSeo from './Pages/CareersSeo';
+import { PageLoading } from './Components/UIStates';
+import Login from './Pages/Login';
+
+const RouteLoader = ({ children }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <PageLoading />;
+  return children;
+};
 
 
 const RoutingApp = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='Users' element={<Users />} />
-        <Route path='Adduser' element={<Adduser />} />
-        <Route path='Coffee' element={<Coffee />} />
-        <Route path='Addcoffee' element={<Addcofffee />} />
-        <Route path='Location' element={<Location />} />
-        <Route path='Addlocation' element={<Addlocation />} />
-        <Route path='Orders' element={<Orders />} />
-        <Route path='Payments' element={<Payments />} />
-        <Route path='Website' element={<Website />} />
-        <Route path='Settings' element={<Settings />} />
-        <Route path='Analatycs' element={<Analatycs />} />
-        <Route path='System' element={<System />} />
+        <Route path='/' element={<RouteLoader><Login /></RouteLoader>} />
+        <Route path='dashboard' element={<RouteLoader><Home /></RouteLoader>} />
+        <Route path='Users' element={<RouteLoader><Users /></RouteLoader>} />
+        <Route path='Adduser' element={<RouteLoader><Adduser /></RouteLoader>} />
+        <Route path='Coffee' element={<RouteLoader><Coffee /></RouteLoader>} />
+        <Route path='Addcoffee' element={<RouteLoader><Addcofffee /></RouteLoader>} />
+        <Route path='Location' element={<RouteLoader><Location /></RouteLoader>} />
+        <Route path='Addlocation' element={<RouteLoader><Addlocation /></RouteLoader>} />
+        <Route path='Orders' element={<RouteLoader><Orders /></RouteLoader>} />
+        <Route path='Payments' element={<RouteLoader><Payments /></RouteLoader>} />
+        <Route path='Website' element={<RouteLoader><Website /></RouteLoader>} />
+        <Route path='Settings' element={<RouteLoader><Settings /></RouteLoader>} />
+        <Route path='Careers' element={<RouteLoader><Careers /></RouteLoader>} />
+        <Route path='CareersSeo' element={<RouteLoader><CareersSeo /></RouteLoader>} />
+        <Route path='Analatycs' element={<RouteLoader><Analatycs /></RouteLoader>} />
+        <Route path='System' element={<RouteLoader><System /></RouteLoader>} />
 
       </Routes>
     </BrowserRouter>

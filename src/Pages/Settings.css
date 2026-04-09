@@ -6,19 +6,19 @@
 .settingsCard h3 { margin-top: 0; }
 .settingsCard label { display: block; font-size: 12px; color: #6c7688; margin: 8px 0 5px; }
 .settingsCard input { width: 100%; border: 1px solid #ccd3de; border-radius: 10px; padding: 9px 10px; }
-.switchRow { display: flex; justify-content: space-between; align-items: center; margin: 9px 0; color: #2a3241; }
-.settingsCard button, .panelTop button { border: none; background: #8dc63f; color: #fff; padding: 10px 14px; border-radius: 10px; cursor: pointer; margin-top: 10px; }
+.settingsPage .switchRow { display: flex; justify-content: space-between; align-items: center; margin: 9px 0; color: #2a3241; }
+.settingsPage .settingsCard button, .settingsPage .panelTop button { border: none; background: #8dc63f; color: #fff; padding: 10px 14px; border-radius: 10px; cursor: pointer; margin-top: 10px; }
 .settingsPanel { margin-top: 14px; background: #fff; border: 1px solid #d8dee7; border-radius: 14px; padding: 14px; }
 .settingsPanel h3 { margin: 0; }
 .settingsPanel p { margin: 4px 0 12px; color: #788293; font-size: 13px; }
-.integrationList, .adminList { display: flex; flex-direction: column; gap: 10px; }
-.integrationRow, .adminRow { border: 1px solid #d8dee7; border-radius: 12px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-.integrationRow strong, .adminRow strong { display: block; }
-.integrationRow small, .adminRow small { color: #788293; }
-.integrationRow span { background: #e5f7ec; color: #14864e; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 700; }
-.panelTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.settingsPage .integrationList, .settingsPage .adminList { display: flex; flex-direction: column; gap: 10px; }
+.settingsPage .integrationRow, .settingsPage .adminRow { border: 1px solid #d8dee7; border-radius: 12px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.settingsPage .integrationRow strong, .settingsPage .adminRow strong { display: block; }
+.settingsPage .integrationRow small, .settingsPage .adminRow small { color: #788293; }
+.settingsPage .integrationRow span { background: #e5f7ec; color: #14864e; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 700; }
+.settingsPage .panelTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .settingsRelated { margin-top: 14px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .settingsRelated article { background: #fff; border: 1px solid #d8dee7; border-radius: 12px; padding: 12px; }
 .settingsRelated span { display: block; margin-top: 5px; font-weight: 700; color: #14864e; }
 .settingsRelated small { color: #788293; }
-@media (max-width: 992px) { .settingsCards, .settingsRelated { grid-template-columns: 1fr; } .panelTop { flex-direction: column; align-items: flex-start; gap: 8px; } }
+@media (max-width: 992px) { .settingsPage .settingsCards, .settingsPage .settingsRelated { grid-template-columns: 1fr; } .settingsPage .panelTop { flex-direction: column; align-items: flex-start; gap: 8px; } }

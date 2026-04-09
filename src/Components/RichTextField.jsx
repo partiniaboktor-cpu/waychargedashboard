@@ -1,9 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./RichTextField.css";
 
-const RichTextField = ({ placeholder = "Write here...", minHeight = 64 }) => {
+const RichTextField = ({
+  placeholder = "Write here...",
+  minHeight = 64,
+  onChangeText,
+  initialValue = "",
+  showToolbar = true,
+}) => {
   const editorRef = useRef(null);
-  const [isEmpty, setIsEmpty] = useState(true);
+  const [isEmpty, setIsEmpty] = useState(!initialValue);
+
+  useEffect(() => {
+    if (!editorRef.current) return;
+    editorRef.current.innerText = initialValue;
+    setIsEmpty(!initialValue.trim());
+  }, [initialValue]);
 
   const run = (command) => {
     if (!editorRef.current) return;
@@ -18,54 +30,58 @@ const RichTextField = ({ placeholder = "Write here...", minHeight = 64 }) => {
       .replace(/<br>/g, "")
       .replace(/&nbsp;/g, "")
       .trim();
-    setIsEmpty(text.length === 0 && html.length === 0);
+    const nextEmpty = text.length === 0 && html.length === 0;
+    setIsEmpty(nextEmpty);
+    if (onChangeText) onChangeText(text);
   };
 
   return (
     <div className="rteWrap">
-      <div className="rteToolbar">
-        <button type="button" onClick={() => run("bold")} aria-label="Bold">
-          B
-        </button>
-        <button type="button" onClick={() => run("italic")} aria-label="Italic">
-          I
-        </button>
-        <button
-          type="button"
-          onClick={() => run("underline")}
-          aria-label="Underline"
-        >
-          U
-        </button>
-        <button
-          type="button"
-          onClick={() => run("strikeThrough")}
-          aria-label="Strike"
-        >
-          S
-        </button>
-        <button
-          type="button"
-          onClick={() => run("insertUnorderedList")}
-          aria-label="Bullet list"
-        >
-          • List
-        </button>
-        <button
-          type="button"
-          onClick={() => run("insertOrderedList")}
-          aria-label="Numbered list"
-        >
-          1. List
-        </button>
-        <button
-          type="button"
-          onClick={() => run("formatBlock")}
-          aria-label="Quote"
-        >
-          "
-        </button>
-      </div>
+      {showToolbar && (
+        <div className="rteToolbar">
+          <button type="button" onClick={() => run("bold")} aria-label="Bold">
+            B
+          </button>
+          <button type="button" onClick={() => run("italic")} aria-label="Italic">
+            I
+          </button>
+          <button
+            type="button"
+            onClick={() => run("underline")}
+            aria-label="Underline"
+          >
+            U
+          </button>
+          <button
+            type="button"
+            onClick={() => run("strikeThrough")}
+            aria-label="Strike"
+          >
+            S
+          </button>
+          <button
+            type="button"
+            onClick={() => run("insertUnorderedList")}
+            aria-label="Bullet list"
+          >
+            • List
+          </button>
+          <button
+            type="button"
+            onClick={() => run("insertOrderedList")}
+            aria-label="Numbered list"
+          >
+            1. List
+          </button>
+          <button
+            type="button"
+            onClick={() => run("formatBlock")}
+            aria-label="Quote"
+          >
+            "
+          </button>
+        </div>
+      )}
 
       <div
         ref={editorRef}

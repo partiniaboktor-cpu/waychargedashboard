@@ -4,6 +4,8 @@ import Topbar from "../Components/Tobbar";
 import Navbar from "../Components/Nav";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
+import RichTextField from "../Components/RichTextField";
+import { EmptyState } from "../Components/UIStates";
 
 const Location = () => {
   const locations = useMemo(
@@ -183,11 +185,12 @@ const Location = () => {
                 <span className="searchIcon" aria-hidden="true">
                   🔍
                 </span>
-                <input
-                  className="filterInput"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                <RichTextField
                   placeholder="Search locations..."
+                  minHeight={46}
+                  showToolbar={false}
+                  initialValue={query}
+                  onChangeText={setQuery}
                 />
               </div>
 
@@ -212,8 +215,14 @@ const Location = () => {
               </select>
             </div>
 
-            <div className="locationGrid">
-              {filtered.map((l) => (
+            {filtered.length === 0 ? (
+              <EmptyState
+                title="No locations matched"
+                subtitle="Try different filters or add a new location."
+              />
+            ) : (
+              <div className="locationGrid">
+                {filtered.map((l) => (
                 <div className="locationCard" key={`${l.kind}-${l.name}`}>
                   <div className="cardTop">
                     <div
@@ -280,8 +289,9 @@ const Location = () => {
                     Last updated: {l.updated}
                   </div>
                 </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <Footer />

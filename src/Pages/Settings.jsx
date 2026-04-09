@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Settings.css";
 import Navbar from "../Components/Nav";
 import Topbar from "../Components/Tobbar";
 import Footer from "../Components/Footer";
+import RichTextField from "../Components/RichTextField";
+import { InlineMessage } from "../Components/UIStates";
 
 const Settings = () => {
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
   const integrations = [
     ["Google Maps API", "AIzaSy************************"],
     ["Stripe Payment Gateway", "sk_live_*******************"],
@@ -27,24 +30,25 @@ const Settings = () => {
         <div className="settingsPage">
           <h1 className="settingsTitle">SETTINGS</h1>
           <p className="settingsSub">Configure system settings, security, and admin access</p>
+          <InlineMessage type={feedback.type} message={feedback.message} />
 
           <div className="settingsCards">
             <section className="settingsCard">
               <h3>General Settings</h3>
-              <label>Site Name</label><input defaultValue="WayCharge" />
-              <label>Support Email</label><input defaultValue="support@waycharge.com" />
-              <label>Contact Phone</label><input defaultValue="+20 123 456 7890" />
+              <label>Site Name</label><RichTextField initialValue="WayCharge" minHeight={50} />
+              <label>Support Email</label><RichTextField initialValue="support@waycharge.com" minHeight={50} />
+              <label>Contact Phone</label><RichTextField initialValue="+20 123 456 7890" minHeight={50} />
               <div className="switchRow"><span>Maintenance Mode</span><input type="checkbox" /></div>
-              <button type="button">Save Changes</button>
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "General settings saved." })}>Save Changes</button>
             </section>
 
             <section className="settingsCard">
               <h3>Security &amp; Access</h3>
               <div className="switchRow"><span>Two-Factor Authentication</span><input type="checkbox" defaultChecked /></div>
-              <label>Session Timeout (minutes)</label><input defaultValue="30" />
-              <label>Max Login Attempts</label><input defaultValue="5" />
-              <label>Password Expiry (days)</label><input defaultValue="90" />
-              <button type="button">Save Changes</button>
+              <label>Session Timeout (minutes)</label><RichTextField initialValue="30" minHeight={50} />
+              <label>Max Login Attempts</label><RichTextField initialValue="5" minHeight={50} />
+              <label>Password Expiry (days)</label><RichTextField initialValue="90" minHeight={50} />
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "Security settings saved." })}>Save Changes</button>
             </section>
 
             <section className="settingsCard">
@@ -53,7 +57,7 @@ const Settings = () => {
               <div className="switchRow"><span>SMS Notifications</span><input type="checkbox" /></div>
               <div className="switchRow"><span>Push Notifications</span><input type="checkbox" defaultChecked /></div>
               <div className="switchRow"><span>Booking Confirmations</span><input type="checkbox" defaultChecked /></div>
-              <button type="button">Save Changes</button>
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "Notification settings saved." })}>Save Changes</button>
             </section>
 
             <section className="settingsCard">
@@ -62,7 +66,7 @@ const Settings = () => {
               <div className="switchRow"><span>Accept Apple Pay</span><input type="checkbox" defaultChecked /></div>
               <div className="switchRow"><span>Accept Instapay</span><input type="checkbox" defaultChecked /></div>
               <div className="switchRow"><span>Points Redemption</span><input type="checkbox" /></div>
-              <button type="button">Save Changes</button>
+              <button type="button" onClick={() => setFeedback({ type: "success", message: "Payment settings saved." })}>Save Changes</button>
             </section>
           </div>
 
@@ -85,7 +89,7 @@ const Settings = () => {
                 <h3>Admin Users</h3>
                 <p>Manage admin accounts and permissions</p>
               </div>
-              <button type="button">+ Add Admin</button>
+              <button type="button" onClick={() => setFeedback({ type: "error", message: "Admin creation service is not connected yet." })}>+ Add Admin</button>
             </div>
             <div className="adminList">
               {admins.map((a) => (
