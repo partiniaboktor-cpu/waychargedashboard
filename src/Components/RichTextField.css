@@ -1,0 +1,42 @@
+.rteWrap {
+  border: 1px solid #d5d9df;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.rteToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid #e7ebf1;
+  background: #f9fafc;
+}
+
+.rteToolbar button {
+  border: 1px solid #d8dce2;
+  background: #fff;
+  color: #4f5969;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rteToolbar button:hover {
+  background: #f1f4f9;
+}
+
+.rteEditor {
+  padding: 12px 14px;
+  font-size: 16px;
+  color: #222b38;
+  outline: none;
+  line-height: 1.5;
+}
+
+.rteEditor.isEmpty::before {
+  content: attr(data-placeholder);
+  color: #9aa3b2;
+}

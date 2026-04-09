@@ -1,0 +1,323 @@
+.analyticsPage{
+  padding: 24px 40px 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+.analyticsTitle{
+  color:#8DC63F;
+  font-size: 40px;
+  margin: 0;
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  -webkit-text-stroke: 2px #8DC63F;
+}
+
+.analyticsSubtitle{
+  color:#7a8599;
+  margin: 6px 0 18px;
+  font-size: 14px;
+}
+
+.metricsRow{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.metricCard{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.metricHighlight{
+  background: #8DC63F;
+  color: #fff;
+}
+
+.metricTop{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-bottom: 10px;
+}
+
+.metricIcon{
+  font-size: 18px;
+}
+
+.metricExtra{
+  font-size: 12px;
+  color: #16a085;
+  font-weight: 700;
+}
+
+.metricHighlight .metricExtra{
+  color: #f2fff2;
+  background: rgba(255,255,255,0.18);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.metricValue{
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #131722;
+}
+
+.metricLabel{
+  margin-top: 4px;
+  color: #8b93a6;
+  font-size: 13px;
+}
+
+.metricHighlight .metricValue,
+.metricHighlight .metricLabel{
+  color: #fff;
+}
+
+.panel{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+.panel h3{
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #1f2433;
+}
+
+.largePanel{
+  margin-bottom: 14px;
+}
+
+.areaChart{
+  border-radius: 10px;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px) 0 0/16.6% 100%,
+    linear-gradient(to top, rgba(0,0,0,0.04) 1px, transparent 1px) 0 0/100% 20%;
+  padding: 8px 8px 2px;
+}
+
+.areaChart svg{
+  width: 100%;
+  height: 280px;
+}
+
+.curveLine{
+  fill: none;
+  stroke: #3f79db;
+  stroke-width: 2.5;
+}
+
+.xLabels{
+  display:flex;
+  justify-content: space-between;
+  color: #8b93a6;
+  font-size: 11px;
+  margin-top: -2px;
+  padding: 0 2px;
+}
+
+.twoCol{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.lineChart{
+  height: 230px;
+  border-radius: 10px;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px) 0 0/25% 100%,
+    linear-gradient(to top, rgba(0,0,0,0.04) 1px, transparent 1px) 0 0/100% 25%;
+  padding: 6px;
+}
+
+.lineChart svg{
+  width: 100%;
+  height: 100%;
+}
+
+.chartPoints circle{
+  fill: #19b58a;
+}
+
+.legend{
+  color: #6da9d8;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.trafficWrap{
+  display:flex;
+  align-items:center;
+  justify-content: space-evenly;
+  gap: 16px;
+  min-height: 230px;
+}
+
+.pie{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #3f79db 0 34%,
+    #19b58a 34% 64%,
+    #f0b72e 64% 81%,
+    #7153d8 81% 93%,
+    #eb5b5b 93% 100%
+  );
+}
+
+.trafficLabels{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  font-size: 13px;
+  color: #7d8598;
+}
+
+.trafficLabels span:nth-child(1){ color:#3f79db; }
+.trafficLabels span:nth-child(2){ color:#19b58a; }
+.trafficLabels span:nth-child(3){ color:#f0b72e; }
+.trafficLabels span:nth-child(4){ color:#7153d8; }
+.trafficLabels span:nth-child(5){ color:#eb5b5b; }
+
+.pagesTable{
+  width:100%;
+  border-collapse: collapse;
+}
+
+.pagesTable th,
+.pagesTable td{
+  text-align:left;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 13px;
+}
+
+.pagesTable th{
+  color: #8b93a6;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.deviceList{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+}
+
+.deviceItem{
+  padding: 4px 0;
+}
+
+.deviceTop{
+  display:flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color:#2d3342;
+  margin-bottom: 6px;
+}
+
+.progressTrack{
+  width:100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e8eaee;
+}
+
+.progressFill{
+  height:100%;
+  border-radius: 999px;
+  background: #8DC63F;
+}
+
+.deviceItem small{
+  color:#8b93a6;
+  font-size: 11px;
+}
+
+.miniCards{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.miniCard{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.miniTop{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  color:#7d8598;
+  font-size: 13px;
+}
+
+.miniIcon{
+  color:#8DC63F;
+}
+
+.miniValue{
+  font-size: 34px;
+  font-weight:700;
+  margin: 6px 0 4px;
+  color:#171c28;
+}
+
+.miniInfo{
+  color:#45b585;
+  font-size: 12px;
+}
+
+@media (max-width: 1024px){
+  .metricsRow,
+  .miniCards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .twoCol{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px){
+  .analyticsPage{
+    padding: 18px;
+  }
+
+  .analyticsTitle{
+    font-size: 26px;
+    -webkit-text-stroke: 1px #8DC63F;
+  }
+
+  .metricsRow,
+  .miniCards{
+    grid-template-columns: 1fr;
+  }
+
+  .metricValue,
+  .miniValue{
+    font-size: 28px;
+  }
+
+  .trafficWrap{
+    flex-direction: column;
+  }
+}
+

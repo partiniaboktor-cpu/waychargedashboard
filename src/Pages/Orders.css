@@ -1,0 +1,316 @@
+.ordersPage {
+  padding: 26px 36px 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ordersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ordersTitle {
+  margin: 0;
+  color: #8dc63f;
+  font-size: 34px;
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  -webkit-text-stroke: 2px #8dc63f;
+}
+
+.ordersSubtitle {
+  margin: 6px 0 0;
+  color: #6b7485;
+}
+
+.exportBtn {
+  border: 1px solid #cad1db;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #263042;
+}
+
+.ordersMetrics {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.ordersMetricCard {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+.metricTopLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.metricIcon {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f2f5fb;
+}
+
+.metricTrend {
+  color: #15a05d;
+  background: #eaf7ef;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.metricLabel {
+  color: #697486;
+  font-size: 13px;
+}
+
+.metricValue {
+  margin-top: 6px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e2533;
+}
+
+.ordersToolbar {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.ordersSearch {
+  flex: 1;
+  border: 1px solid #cfd6e0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.filterBtn {
+  border: 1px solid #cfd6e0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 18px;
+  cursor: pointer;
+}
+
+.ordersSection {
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.sectionHead h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.sectionHead p {
+  margin: 4px 0 14px;
+  color: #7a8495;
+  font-size: 13px;
+}
+
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.orderRow {
+  border: 1px solid #d8dee7;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 50px 1.1fr 1.1fr repeat(4, 0.8fr) 0.9fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.rowType {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.type-charging {
+  background: #eaf8ee;
+}
+
+.type-coffee {
+  background: #fff6e5;
+}
+
+.type-mobile {
+  background: #f3ecff;
+}
+
+.rowOrderId,
+.rowCustomer {
+  font-weight: 700;
+  color: #1f2735;
+}
+
+.rowTime {
+  color: #7d8798;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.rowMeta span {
+  color: #7d8798;
+  font-size: 11px;
+}
+
+.rowMeta strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.orderStatus {
+  justify-self: end;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-completed {
+  color: #13854d;
+  background: #e5f7ec;
+}
+
+.status-preparing {
+  color: #9a6e00;
+  background: #fff2cf;
+}
+
+.status-in-progress {
+  color: #376ac5;
+  background: #e9f1ff;
+}
+
+.status-cancelled {
+  color: #b23b48;
+  background: #fdecef;
+}
+
+.ordersFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  color: #667184;
+  font-size: 13px;
+}
+
+.pagerBtns button {
+  border: 1px solid #cad1db;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.ordersRelatedSection {
+  margin-top: 16px;
+}
+
+.ordersRelatedSection h3 {
+  margin: 0 0 10px;
+}
+
+.relatedCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.relatedCard {
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.relatedCard strong {
+  display: block;
+  font-size: 28px;
+  margin: 6px 0;
+}
+
+.relatedCard span {
+  color: #6c7688;
+  font-size: 12px;
+}
+
+.relatedCard.green {
+  background: #eaf8ee;
+}
+
+.relatedCard.orange {
+  background: #fff5e3;
+}
+
+.relatedCard.purple {
+  background: #f3ecff;
+}
+
+@media (max-width: 1200px) {
+  .ordersMetrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .orderRow {
+    grid-template-columns: 50px 1fr 1fr;
+  }
+
+  .rowMeta,
+  .orderStatus {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .ordersPage {
+    padding: 16px;
+  }
+
+  .ordersHeader {
+    flex-direction: column;
+  }
+
+  .ordersTitle {
+    font-size: 24px;
+    -webkit-text-stroke: 1px #8dc63f;
+  }
+
+  .ordersMetrics,
+  .relatedCards {
+    grid-template-columns: 1fr;
+  }
+
+  .ordersToolbar {
+    flex-direction: column;
+  }
+}

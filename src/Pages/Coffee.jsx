@@ -3,6 +3,7 @@ import './Coffee.css'
 import Topbar from '../Components/Tobbar';
 import Navbar from '../Components/Nav';
 import Footer from '../Components/Footer';
+import { Link } from 'react-router-dom';
 
 const Coffee = () => {
 
@@ -87,12 +88,14 @@ status:"Available"
 <div className="headerRow5">
 
 <div>
+
 <h1 className="title5">COFFEE DRINKS</h1>
+
 <p className="subtitle5">Manage coffee drinks and coffee experiences</p>
 </div>
-
+  <Link to="/Addcoffee" className="closeLink">
 <button className="addButton5">+ Add coffee</button>
-
+</Link>
 </div>
 
 

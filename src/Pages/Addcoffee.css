@@ -1,0 +1,174 @@
+
+
+.modalContainer4{
+width: 100%;
+background:white;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+padding:25px;
+margin-left: 2%;
+}
+
+.modalHeader4{
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+margin-bottom:15px;
+}
+
+.title4{
+font-size:20px;
+color: #8DC63F;
+   font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;  max-width: 100%;
+  -webkit-text-stroke: 2px #8DC63F;
+}
+
+.closeBtn4{
+font-size:22px;
+cursor:pointer;
+color:#888;
+text-decoration: none;
+}
+.closeLink{
+    text-decoration: none;
+
+}
+
+.tabsContainer4{
+display:flex;
+gap:30px;
+border-bottom:1px solid #eee;
+margin-bottom:20px;
+}
+
+.tab4{
+padding-bottom:10px;
+cursor:pointer;
+color:#666;
+}
+
+.tabActive4{
+padding-bottom:10px;
+cursor:pointer;
+color:#8DC63F;
+border-bottom:3px solid #8DC63F;
+font-weight:600;
+}
+
+.formContainer4{
+display:flex;
+flex-direction:column;
+}
+
+.label4{
+margin-top:12px;
+margin-bottom:5px;
+font-size:14px;
+color:#444;
+}
+
+.input4{
+padding:10px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:14px;
+}
+
+.textarea4{
+padding:10px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:14px;
+min-height:80px;
+resize:none;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttonContainer4{
+display:flex;
+justify-content:flex-end;
+margin-top:25px;
+}
+
+.submitBtn4{
+background:#7bc043;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+font-size:14px;
+cursor:pointer;
+}
+
+/* -------------------- Responsive Styles -------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .modalContainer4 {
+    padding: 20px;
+  }
+
+  .title4 {
+    font-size: 18px;
+    -webkit-text-stroke: 1.5px #8DC63F;
+  }
+
+  .tabsContainer4 {
+    gap: 20px;
+  }
+
+  .submitBtn4 {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .modalContainer4 {
+    width: 90%;
+    padding: 15px;
+    margin: 5% auto;
+  }
+
+  .modalHeader4 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .title4 {
+    font-size: 16px;
+    -webkit-text-stroke: 1px #8DC63F;
+  }
+
+  .tabsContainer4 {
+    flex-wrap: nowrap;
+    gap: 15px;
+  }
+
+  .label4 {
+    font-size: 13px;
+  }
+
+  .input4,
+  .textarea4 {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .submitBtn4 {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .buttonContainer4 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

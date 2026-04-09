@@ -1,0 +1,105 @@
+.addLocationPage {
+  padding: 18px 24px 30px;
+}
+
+.addLocationCard {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.addLocationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 26px;
+  border-bottom: 1px solid #e8ecf1;
+}
+
+.addLocationHeader h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #1f2430;
+}
+
+.addLocationClose {
+  text-decoration: none;
+  font-size: 30px;
+  color: #8d95a4;
+  line-height: 1;
+}
+
+.addLocationTabs {
+  display: flex;
+  gap: 26px;
+  padding: 12px 26px 0;
+  border-bottom: 1px solid #e8ecf1;
+}
+
+.addLocationTabs .tab {
+  border: none;
+  background: transparent;
+  color: #3d4656;
+  font-size: 18px;
+  padding: 10px 0 14px;
+  cursor: pointer;
+}
+
+.addLocationTabs .tab.active {
+  color: #8dc63f;
+  border-bottom: 3px solid #8dc63f;
+}
+
+.addLocationForm {
+  padding: 18px 26px 6px;
+}
+
+.addLocationForm label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 7px;
+  font-size: 14px;
+  color: #222a38;
+  font-weight: 600;
+}
+
+.addLocationForm label span {
+  color: #d64c4c;
+}
+
+.addLocationActions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px 26px 26px;
+}
+
+.addLocationActions button {
+  border: none;
+  background: #8dc63f;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 14px;
+  padding: 14px 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .addLocationHeader h2 {
+    font-size: 26px;
+  }
+
+  .addLocationTabs .tab {
+    font-size: 20px;
+  }
+
+  .addLocationForm label {
+    font-size: 14px;
+  }
+
+  .addLocationActions button {
+    width: 100%;
+    font-size: 16px;
+  }
+}

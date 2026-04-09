@@ -1,20 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import './Adduser.css'
 import Navbar from '../Components/Nav';
 import Topbar from '../Components/Tobbar';
 import { Link } from 'react-router-dom';
 import Footer from "../Components/Footer";
+import RichTextField from "../Components/RichTextField";
 
 const Adduser = () => {
-
-const [name4,setName4] = useState("");
-const [email4,setEmail4] = useState("");
-const [role4,setRole4] = useState("");
-const [status4,setStatus4] = useState("");
-const [carType4,setCarType4] = useState("");
-const [joinDate4,setJoinDate4] = useState("");
-const [lastActive4,setLastActive4] = useState("");
-
 
     return ( <>
     
@@ -41,31 +33,31 @@ const [lastActive4,setLastActive4] = useState("");
 <div className="formContainer4">
 
 <label className="label4">Name</label>
-<input className="input4" placeholder="Enter location name" />
+<RichTextField placeholder="Enter user name" minHeight={56} />
 
 
 <label className="label4">Email*</label>
-<textarea className="textarea4" placeholder="Enter location description"></textarea>
+<RichTextField placeholder="Enter email address" minHeight={56} />
 
 
 <label className="label4">Role*</label>
-<input className="input4" placeholder="Enter full address" />
+<RichTextField placeholder="Enter role" minHeight={56} />
 
 
 <label className="label4">Status*</label>
-<input className="input4" />
+<RichTextField placeholder="Enter status" minHeight={56} />
 
 
 <label className="label4">Car Type</label>
-<textarea className="textarea4" placeholder="List available amenities"></textarea>
+<RichTextField placeholder="Enter car type" minHeight={96} />
 
 
 <label className="label4">Join Date</label>
-<textarea className="textarea4" placeholder="List available amenities"></textarea>
+<RichTextField placeholder="Enter join date" minHeight={96} />
 
 
 <label className="label4">Last Active</label>
-<textarea className="textarea4" placeholder="List available amenities"></textarea>
+<RichTextField placeholder="Enter last active date/time" minHeight={96} />
 
 
 <div className="buttonContainer4">
