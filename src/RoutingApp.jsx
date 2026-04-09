@@ -17,6 +17,7 @@ import Careers from './Pages/Careers';
 import CareersSeo from './Pages/CareersSeo';
 import { PageLoading } from './Components/UIStates';
 import Login from './Pages/Login';
+import Logout from './Pages/Logout';
 
 const RouteLoader = ({ children }) => {
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,7 @@ const RoutingApp = () => {
       <Routes>
         <Route path='/' element={<RouteLoader><Login /></RouteLoader>} />
         <Route path='dashboard' element={<RouteLoader><Home /></RouteLoader>} />
+        <Route path='Logout' element={<RouteLoader><Logout /></RouteLoader>} />
         <Route path='Users' element={<RouteLoader><Users /></RouteLoader>} />
         <Route path='Adduser' element={<RouteLoader><Adduser /></RouteLoader>} />
         <Route path='Coffee' element={<RouteLoader><Coffee /></RouteLoader>} />

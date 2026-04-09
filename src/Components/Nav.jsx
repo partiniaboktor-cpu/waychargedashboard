@@ -7,6 +7,7 @@ import users from '../Assets/icons/users.svg';
 import coffee from '../Assets/icons/coffee.svg';
 import analatyics from '../Assets/icons/analatyics.svg';
 import globe from '../Assets/icons/globe.svg';
+import logout from '../Assets/icons/logout.svg';
 import { Link, useLocation } from 'react-router-dom';
 import {
   FaCartShopping,
@@ -90,7 +91,7 @@ const Navbar = () => {
 
 <Link to="/Website" className="navLink">
   <div className="navItem">
-    <img src={globe} className={`navIcon ${isActive("/Website") ? "active" : ""}`} alt="website"/>
+    <img src={globe} className={`navIcon websiteNavIcon ${isActive("/Website") ? "active" : ""}`} alt="website"/>
     <span className="navText">Website</span>
   </div>
 </Link>
@@ -110,6 +111,15 @@ const Navbar = () => {
 </Link>
 
 </div>
+        </div>
+
+        <div className="navBottom">
+          <Link to="/Logout" className="navLink">
+            <div className="navItem">
+              <img src={logout} className={`navIcon ${isActive("/Logout") ? "active" : ""}`} alt="logout"/>
+              <span className="navText">Logout</span>
+            </div>
+          </Link>
         </div>
 
       </div>

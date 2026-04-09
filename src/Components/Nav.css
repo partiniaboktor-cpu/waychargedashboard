@@ -5,8 +5,10 @@
   background: #1e1e1e;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding-top: 20px;
+  padding-bottom: 18px;
   position: fixed;
   left: 0;
   top: 0;
@@ -31,6 +33,11 @@
   opacity: 0.6;
 }
 
+.websiteNavIcon {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
 .navIconGlyph {
   font-size: 20px;
   color: #ffffff;
@@ -41,6 +48,11 @@
 .navIcon.active {
   opacity: 1;
   filter: brightness(1.5);
+}
+
+.websiteNavIcon.active {
+  opacity: 1;
+  filter: brightness(0) invert(1);
 }
 
 .navIconGlyph.active {
@@ -89,6 +101,10 @@
 .navItem:hover .navText {
   opacity: 1;
   transform: translateX(0);
+}
+
+.navBottom {
+  margin-bottom: 6px;
 }
 /* TABLET */
 @media (max-width: 1024px) {

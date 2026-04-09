@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import RichTextField from "../Components/RichTextField";
 import { InlineMessage } from "../Components/UIStates";
+import whoLogo from "../Assets/icons/wholologo.svg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Login = () => {
   return (
     <div className="loginPage">
       <div className="loginCard">
-        <h1>WayCharge Admin</h1>
+        <img src={whoLogo} alt="WayCharge logo" className="loginLogo" />
         <p>Sign in to access your dashboard</p>
         <InlineMessage type={message.type} message={message.text} />
 

@@ -16,7 +16,7 @@ const Users = () => {
     { id: 'E', name: 'Emad Boktor', email: 'david.lee@example.com', role: 'Standard', cartype:'BMW', status: 'Pending', joinDate: '2024-03-17', lastActive: 'Never' },
     { id: 'R', name: 'Ramez Raouf', email: 'lisa.a@example.com', role: 'Premium', cartype:'Mercedes', status: 'Active', joinDate: '2024-02-28', lastActive: '5 hours ago' },
     { id: 'A', name: 'Amir Nady', email: 'tom.brown@example.com', role: 'Standard', cartype:'BMW', status: 'Active', joinDate: '2024-03-12', lastActive: '2 days ago' },
-    { id: 'E', name: 'Erini Nagy', email: 'rachel.g@example.com', role: 'Premium', cartype:'BYD', status: 'Active', joinDate: '2024-01-25', lastActive: '4 hours ago' }
+    { id: 'E', name: 'Habiba Amir', email: 'rachel.g@example.com', role: 'Premium', cartype:'AUDI', status: 'Active', joinDate: '2024-01-25', lastActive: '4 hours ago' }
   ];
 
   const getStatusClass = (status) => {
